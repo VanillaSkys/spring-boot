@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/api/v1/product")
+@RequestMapping("/api/v1")
 public class Product {
     private final ProductBussiness bussiness;
 
@@ -22,12 +22,12 @@ public class Product {
         this.bussiness = bussiness;
     }
 
-    @GetMapping
+    @GetMapping("/user/product")
     public String findAllByProduct() {
-        return "Hello";
+        return "Hell";
     }
 
-    @PostMapping
+    @PostMapping("/admin/product")
     public ResponseEntity<ProductEntity> createProduct(@RequestBody CreateProductRequest request) throws BaseException {
         ProductEntity response = bussiness.createProduct(request);
         return ResponseEntity.ok(response);

@@ -10,7 +10,6 @@ import com.example.demo.service.abstractions.IProductService;
 @Service
 public class ProductBussiness {
     private final IProductService productService;
-    
     public ProductBussiness(IProductService productService) {
         this.productService = productService;
     }

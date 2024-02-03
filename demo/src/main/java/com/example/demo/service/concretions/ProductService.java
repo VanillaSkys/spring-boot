@@ -22,7 +22,6 @@ public class ProductService implements IProductService {
         if(Objects.isNull(name)) {
             throw ProductException.nameNull();
         }
-        repository.existsByName(name);
         
         ProductEntity entity = new ProductEntity();
         entity.setName(name);

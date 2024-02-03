@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import com.example.demo.entity.ProductEntity;
 
 public interface ProductRepository extends CrudRepository<ProductEntity, String> {
-    boolean existsByName(String name);
+
 }
