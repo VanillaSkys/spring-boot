@@ -6,9 +6,11 @@ import com.example.demo.bussiness.UserBussiness;
 import com.example.demo.exception.BaseException;
 import com.example.demo.model.request.LoginUserRequest;
 import com.example.demo.model.request.RegisterUserRequest;
+import com.example.demo.model.response.LoginUserResponse;
 import com.example.demo.model.response.RegisterUserResponse;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,10 +33,9 @@ public class User {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> loginUser(@RequestBody LoginUserRequest request) throws BaseException {
-        String response = bussiness.loginUser(request);
+    public ResponseEntity<LoginUserResponse> loginUser(@RequestBody LoginUserRequest request) throws BaseException {
+        LoginUserResponse response = bussiness.loginUser(request);
         return ResponseEntity.ok(response);
     }
-    
-    
+
 }

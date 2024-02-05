@@ -7,13 +7,15 @@ import com.example.demo.exception.BaseException;
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.model.request.LoginUserRequest;
 import com.example.demo.model.request.RegisterUserRequest;
+import com.example.demo.model.response.LoginUserResponse;
 import com.example.demo.model.response.RegisterUserResponse;
 import com.example.demo.service.abstractions.IUserService;
+
 
 @Service
 public class UserBussiness {
     
-    private IUserService userService;
+    private final IUserService userService;
     private UserMapper userMapper;
 
     public UserBussiness(IUserService userService, UserMapper userMapper) {
@@ -26,8 +28,9 @@ public class UserBussiness {
         return userMapper.mapRegisterUserResponse(userEntity);
     }
 
-    public String loginUser(LoginUserRequest request) throws BaseException {
-        String userEntity = userService.loginUser(request.getUsername(), request.getPassword());
-        return userEntity;
+
+    public LoginUserResponse loginUser(LoginUserRequest request) throws BaseException {
+        LoginUserResponse response = userService.loginUser(request.getUsername(), request.getPassword());
+        return response;
     }
 }
