@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -19,8 +20,8 @@ public class TestUserService {
         this.userService = userService;
     }
 
+    @Order(1)
     @Test
     void testRegister() {
-        
     }
 }

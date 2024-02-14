@@ -22,9 +22,14 @@ public class Product {
         this.bussiness = bussiness;
     }
 
+    @GetMapping("/public/product")
+    public String findByProduct() {
+        return "Sawatdee";
+    }
+
     @GetMapping("/user/product")
     public String findAllByProduct() {
-        return "Hell";
+        return "Sawatdee User";
     }
 
     @PostMapping("/admin/product")
